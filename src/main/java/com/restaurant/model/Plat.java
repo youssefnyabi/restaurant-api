@@ -2,6 +2,7 @@ package com.restaurant.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "plat")
@@ -20,7 +21,7 @@ public class Plat {
 
     @Positive(message = "Le prix doit etre positif")
     private double prix;
-
+    @JsonIgnore
     private double coutIngredients;
 
     public Plat() {}
