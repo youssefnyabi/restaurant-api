@@ -1,0 +1,28 @@
+package com.restaurant.model;
+import jakarta.persistence.*;
+@Entity
+@Table(name = "plat")
+public class Plat {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nom;
+    private int calories;
+    private double prix;
+    private double coutIngredients;
+    public Plat() {}
+    public Plat(String nom, int calories, double prix, double cout) {
+        this.nom = nom; this.calories = calories;
+        this.prix = prix; this.coutIngredients = cout;
+    }
+    public Long getId() { return id; }
+    public String getNom() { return nom; }
+    public int getCalories() { return calories; }
+    public double getPrix() { return prix; }
+    public double getCoutIngredients() { return coutIngredients; }
+    public void setId(Long id) { this.id = id; }
+    public void setNom(String nom) { this.nom = nom; }
+    public void setCalories(int c) { this.calories = c; }
+    public void setPrix(double p) { this.prix = p; }
+    public void setCoutIngredients(double c) { this.coutIngredients = c; }
+}
